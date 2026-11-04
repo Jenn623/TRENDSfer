@@ -1,0 +1,241 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  width: 100%;
+  height: 90%;
+  font-family: "Space Grotesk";
+}
+
+header {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+}
+
+.container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.btn-volver {
+  margin-bottom: 2rem;
+}
+
+.btn-volver p {
+  color: white;
+  font-size: 2.2rem;
+}
+
+.btn-volver a,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  background-color: #6b6b6b;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar h1 {
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.avatar-name {
+  margin-left: 2.8rem;
+  display: flex;
+}
+
+.editar-vector{
+    margin-left: 1.5rem;
+}
+
+.avatar-name h2 {
+  color: white;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #d9d9d9;
+  width: 33rem;
+  /* height: 50rem; */
+  height: calc(70dvh - 2rem);
+  display: flex;
+  flex-direction: column;
+  border-radius: 2.5rem;
+  overflow: auto;
+}
+
+.registro h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-left: 2.5rem;
+  margin-top: 2rem;
+  /* position: sticky; */
+  top: 10px;
+}
+
+.form-registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.form-registro p {
+  font-size: 2rem;
+}
+
+.form-registro input {
+  width: 80%;
+  height: 4rem;
+  border-radius: 1rem;
+  border: none;
+  border-bottom: 3px solid gray;
+}
+
+.btn-guardar{
+         background-color: #D62828;
+    color: white;
+    border: none;
+    border-bottom: 3px solid gray;
+    padding: 8px;
+    width: 175px;
+    margin-top: 20px;
+    border-radius: 13px;
+    font-size: 1.8rem;
+}
+
+footer {
+  margin-top: 0.3rem;
+  height: 6rem;
+  width: 100%;
+  color: white;
+  background-color: #2b2b2b;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.options {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+}
+
+.options::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #d62828;
+  opacity: 0;
+}
+
+.options.active::before {
+  opacity: 1;
+}
+
+.options a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: clamp(1.1rem, 3.4vw, 1.5rem);
+  /* font-size: 1.5rem; */
+  font-family: "Space Grotesk";
+}
+
+@media (min-width: 768px) {
+  body {
+    min-height: 100vh;
+    padding-bottom: 9rem;
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: min(110rem, calc(100% - 4rem));
+    height: auto;
+    margin: 3rem auto;
+  }
+
+  .btn-volver {
+    margin: 0 1rem 0 0;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    margin: 2rem auto 3rem;
+  }
+
+  .card {
+    width: min(76rem, calc(100% - 4rem));
+    height: calc(100vh - 28rem);
+    min-height: 50rem;
+    margin: 0 auto;
+    padding: 1rem 2rem 3rem;
+  }
+
+  .registro {
+    width: 100%;
+  }
+
+  .form-registro input {
+    width: min(52rem, 90%);
+  }
+
+  footer {
+    height: 7rem;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .options {
+    flex: 0 1 18rem;
+    text-align: center;
+  }
+}

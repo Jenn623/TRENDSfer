@@ -1,0 +1,451 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  width: 100%;
+}
+
+header {
+  height: 20%;
+  width: 100%;
+  font-family: "Space Grotesk";
+}
+
+.head-search {
+  height: 10rem;
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search form input {
+  width: 25rem;
+  height: 4rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  border: none;
+}
+
+.options-friends {
+  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.options-friends h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.friends {
+  background-color: #d9d9d9;
+  width: 10rem;
+  border-radius: 2rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.friends h4 {
+  color: black;
+}
+
+.solicitudes {
+  background-color: #d9d9d9;
+  width: 10rem;
+  border-radius: 2rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: calc(90dvh - 20rem);
+  width: 90dvw;
+  overflow-y: auto;
+  background-color: #d9d9d9;
+  margin: -20px auto 0 auto;
+  font-family: "Space Grotesk";
+  border-radius: 25px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title h1 {
+  font-size: 3.2rem;
+  margin-top: 2rem;
+}
+
+.list-friends {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  background-color: #6b6b6b;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 2rem;
+}
+
+.profile-info {
+  font-size: 2.4rem;
+  color: white;
+}
+
+.friend-info p {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.list-solicitud {
+  display: flex;
+}
+
+.solicitud {
+  display: flex;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.nombre h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn-opciones {
+  font-size: 1.6rem;
+  border: none;
+  width: 10rem;
+  height: 2.7rem;
+  border-radius: 1rem;
+}
+
+.btn-solicitud {
+  display: flex;
+  gap: 1rem;
+}
+
+#btn-confirmar {
+  background-color: #d62828;
+  color: white;
+}
+
+#btn-eliminar {
+  background-color: #bab9b9;
+  color: black;
+}
+
+input[name="tabs"] {
+  display: none;
+}
+
+/* ocultar todos los paneles por defecto */
+.panel {
+  display: none;
+}
+
+/*mostrar el panel de acuerdo al boton radio*/
+#tab-amigo:checked ~ main .panel-friends,
+#tab-solicitudes:checked ~ main .panel-solicitudes {
+  display: block;
+}
+
+#tab-amigo:checked ~ .head-search label[for="tab-amigo"],
+#tab-solicitudes:checked ~ .head-search label[for="tab-solicitudes"] {
+  background-color: #d62828;
+}
+
+#tab-amigo:checked ~ .head-search label[for="tab-amigo"] h4,
+#tab-solicitudes:checked ~ .head-search label[for="tab-solicitudes"] h4 {
+  color: white;
+}
+
+footer {
+  margin-top: 0.3rem;
+  height: 6rem;
+  width: 100%;
+  color: white;
+  background-color: #2b2b2b;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.options {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.options::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #d62828;
+  opacity: 0;
+}
+
+.options.active::before {
+  opacity: 1;
+}
+
+.options a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Space Grotesk";
+}
+
+.logo {
+  display: none;
+}
+
+.dashboard-brand{
+  display: none;
+}
+
+  .avatar-photo {
+    display: none;
+  }
+
+@media (min-width: 768px) {
+  body {
+    min-height: 100vh;
+    padding-bottom: 9rem;
+  }
+
+  .head-search {
+    width: min(80rem, calc(100% - 4rem));
+    height: auto;
+    margin: 3rem auto 2rem;
+  }
+
+  .search form {
+    width: min(60rem, 100%);
+  }
+
+  .search form input {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .options-friends {
+    /* justify-content: center;
+        gap: 2rem; */
+    display: none;
+  }
+
+  .avatar-photo {
+    display: none;
+  }
+
+  /* .friends,
+    .solicitudes {
+        width: min(20rem, 40vw);
+    } */
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    width: min(80rem, calc(100% - 4rem));
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    background-color: transparent;
+    overflow: visible;
+  }
+
+  .panel {
+    display: block;
+    flex: 0 1 35rem;
+    min-height: 40rem;
+    background-color: #d9d9d9;
+    border-radius: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .list-friends {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .list-solicitud {
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  footer {
+    height: 7rem;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .options {
+    flex: 0 1 18rem;
+    text-align: center;
+  }
+}
+
+    .dashboard-brand {
+        display: flex;
+        justify-content: end;
+        align-self: flex-end;
+    }
+
+    .dashboard-brand img {
+        display: block;
+        width: 8rem;
+    }
+
+@media (min-width: 1024px) {
+  body {
+    padding: 0 0 0 24rem;
+    height: 100vh;
+  }
+
+  footer {
+    top: 0;
+    bottom: auto;
+    width: 24rem;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 3rem 0;
+    margin: 0;
+  }
+
+  .logo {
+    display: block;
+    order: 0;
+    padding: 0 2.5rem 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .logo img {
+    display: block;
+    width: 100%;
+    max-width: 16rem;
+    height: auto;
+  }
+
+  .avatar-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 5;
+    margin-top: auto;
+    margin-left: 2rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: #6b6b6b;
+  }
+
+  .avatar-photo h1 {
+    font-family: "Space Grotesk";
+    font-size: 4rem;
+    color: white;
+  }
+
+  #deudas-deudores {
+    order: 1;
+  }
+  #ticket {
+    order: 2;
+  }
+  #amigos {
+    order: 3;
+  }
+  #cuenta {
+    order: 4;
+  }
+  .avatar-photo {
+    order: 5;
+  }
+
+  .options {
+    flex: none;
+    text-align: left;
+    border-radius: 0;
+    overflow: visible;
+    height: 5rem;
+  }
+
+  .options::before {
+    inset: 0 auto 0 0;
+    width: 0.3rem;
+  }
+
+  .options a {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+  }
+
+  .head-search,
+  .container {
+    width: min(90rem, calc(100% - 6rem));
+  }
+
+  .container {
+    height: 50vh;
+    gap: 10rem;
+    margin-top: 8rem;
+  }
+
+  .panel {
+    flex: 0 1 32rem;
+    height: 50rem;
+    gap: 5rem;
+  }
+}

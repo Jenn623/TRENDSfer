@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amigos</title>
+    <link rel="shortcut icon" href="img/arrows.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/amigos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <input type="radio" name="tabs" id="tab-amigo" checked />
+    <input type="radio" name="tabs" id="tab-solicitudes" />
+    <header class="head-search">
+      <div class="search">
+        <form action="/buscar" method="get">
+          <input
+            type="search"
+            id="barra-busqueda"
+            name="q"
+            placeholder="Buscar"
+          />
+        </form>
+      </div>
+      <div class="options-friends">
+        <!-- <div class="friends" id="tab-amigo">
+          <h4>Amigos</h4>
+        </div>
+        <div class="solicitudes" id="tab-solicitudes">
+          <h4>Solicitudes</h4> -->
+        <label for="tab-amigo" class="tab-btn friends"><h4>Amigos</h4></label>
+        <label for="tab-solicitudes" class="tab-btn solicitudes"
+          ><h4>Solicitudes</h4></label
+        >
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div class="panel panel-friends">
+            <div class="title">
+              <h1>Amigos</h1>
+            </div>
+            <div class="list-friends">
+              <div class="avatar-container">
+                <div class="avatar">
+                  <p class="profile-info">R</p>
+                </div>
+                <div class="friend-info">
+                  <p>Ruben</p>
+                </div>
+              </div>
+              <div class="avatar-container">
+                <div class="avatar">
+                  <p class="profile-info">M</p>
+                </div>
+                <div class="friend-info">
+                  <p>Miguel</p>
+                </div>
+              </div>
+              <div class="avatar-container">
+                <div class="avatar">
+                  <p class="profile-info">I</p>
+                </div>
+                <div class="friend-info">
+                  <p>Ing. Carlos</p>
+                </div>
+              </div>
+              <div class="avatar-container">
+                <div class="avatar">
+                  <p class="profile-info">E</p>
+                </div>
+                <div class="friend-info">
+                  <p>Elio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-solicitudes">
+            <div class="title">
+              <h1>Solicitudes</h1>
+            </div>
+            <div class="list-solicitud">
+              <div class="solicitud">
+                <div class="avatar">
+                  <p class="profile-info">F</p>
+                </div>
+                <div class="info">
+                  <div class="nombre">
+                    <h3>Fernando</h3>
+                  </div>
+                  <div class="btn-solicitud">
+                    <button class="btn-opciones" id="btn-confirmar">
+                      Confirmar
+                    </button>
+                    <button class="btn-opciones" id="btn-eliminar">
+                      Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <div class="dashboard-brand">
+        <img src="img/Logo-ITRENDS.jpeg" alt="ITRENDS" />
+      </div> -->
+    </main>
+    <footer>
+      <div class="logo">
+        <img src="./img/svg_TRENDSfer.svg" alt="TRENDSfer" />
+      </div>
+      <div class="options" id="ticket"><a href="./ticket.html">Ticket</a></div>
+      <div class="options" id="deudas-deudores">
+        <a href="./principal.html">Deudas/Deudores</a>
+      </div>
+      <div class="options active" id="amigos">
+        <a href="./amigos.html">Amigos</a>
+      </div>
+      <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
+      <div class="avatar-photo">
+        <h1>L</h1>
+      </div>
+    </footer>
+  </body>
+</html>

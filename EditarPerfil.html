@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Perfil</title>
+    <link rel="shortcut icon" href="img/arrows.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/EditarPerfil.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="btn-volver">
+        <p><a href="./cuenta.html">< volver</a></p>
+      </div>
+      <div class="profile-info">
+        <div class="avatar">
+          <h1>L</h1>
+        </div>
+        <div class="avatar-name">
+          <h2>Lalo</h2>
+          <img class="editar-vector" src="./img/edit-vector.svg" alt="vector- editar">
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="card">
+        <div class="registro">
+          <h1>Editar Perfil</h1>
+          <form class="form-registro" action="/index.html">
+            <p>Nombre(s)</p>
+            <input type="text" name="nombre" placeholder="Eduardo" required />
+
+            <p>Apellido(s)</p>
+            <input
+              type="text"
+              name="apellidos"
+              placeholder="Cabrera"
+              required
+            />
+
+            <p>Apodo</p>
+            <input type="text" name="apodo" placeholder="Lalo" required />
+
+            <p>Correo electronico</p>
+            <input
+              type="email"
+              name="correo"
+              placeholder="lalocabrera@gmail.com"
+              required
+            />
+
+            <p>Contraseña</p>
+            <input
+              type="password"
+              name="contrasena"
+              placeholder="******"
+              required
+            />
+
+            <button class="btn-guardar" type="submit">Guardar Cambios</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="options" id="ticket"><a href="./ ticket.html">Ticket</a></div>
+      <div class="options" id="deudas-deudores">
+        <a href="./principal.html">Deudas/Deudores</a>
+      </div>
+      <div class="options active" id="amigos">
+        <a href="./amigos.html">Amigos</a>
+      </div>
+      <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
+    </footer>
+  </body>
+</html>

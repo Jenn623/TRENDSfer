@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuenta</title>
+    <link rel="shortcut icon" href="img/arrows.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/cuenta.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="profile">
+        <h1>L</h1>
+      </div>
+      <h1 class="Usuario">Lalo</h1>
+    </header>
+    <main>
+      <section class="cuenta-layout">
+        <div class="Cuenta">
+          <p>
+            Notificaciones
+            <a href="./Notificaciones.html" data-selector=".card">></a>
+          </p>
+          <p>
+            Editar Perfil
+            <a href="./EditarPerfil.html" data-selector=".card">></a>
+          </p>
+          <p>
+            Agregar Tarjeta
+            <a href="./AgregarTarjeta.html" data-selector=".card">></a>
+          </p>
+          <p>
+            Compartir Perfil
+            <a href="./CompartirPerfil.html" data-selector=".card">></a>
+          </p>
+          <button class="CerrarSesion">
+            <a href="./index.html">Cerrar Sesion</a>
+          </button>
+        </div>
+
+        <div class="detalle" id="detalle"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="logo">
+        <img src="./img/svg_TRENDSfer.svg" alt="TRENDSfer" />
+      </div>
+      <div class="options" id="ticket"><a href="./ticket.html">Ticket</a></div>
+      <div class="options" id="deudas-deudores">
+        <a href="./principal.html">Deudas/Deudores</a>
+      </div>
+      <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
+      <div class="options active" id="cuenta">
+        <a href="./cuenta.html">Cuenta</a>
+      </div>
+      <div class="avatar-photo"><h1>L</h1></div>
+    </footer>
+
+    <script src="cuenta.js"></script>
+  </body>
+</html>

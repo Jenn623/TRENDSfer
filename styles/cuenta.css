@@ -1,0 +1,820 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-size: 62.5%; */
+}
+
+header {
+  height: 30%;
+  width: 100%;
+  font-family: "Space Grotesk";
+}
+
+.btn-volver {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.btn-volver p {
+  color: white;
+  font-size: 2.2rem;
+}
+
+.btn-volver a,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.profile {
+  background-color: #6b6b6b;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  transform: translate(50px, 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile h1 {
+  font-size: 2.4rem;
+  color: #ffffff;
+}
+
+.Usuario {
+  color: white;
+  font-size: 3.5rem;
+  margin-left: 160px;
+  margin-top: -30px;
+}
+
+body {
+  background-color: black;
+  height: 70%;
+  width: 100%;
+}
+
+footer {
+  margin-top: 0.3rem;
+  height: 60px;
+  width: 100%;
+  color: white;
+  background-color: #2b2b2b;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.options {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.options::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #d62828;
+  opacity: 0;
+}
+
+.options.active::before {
+  opacity: 1;
+}
+
+.options a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Space Grotesk";
+}
+
+.Cuenta {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  font-family: "Space Grotesk";
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Cuenta p {
+  padding-top: 50px;
+  padding-left: 45px;
+  color: black;
+  font-size: 2rem;
+  margin: 0;
+  border-bottom: 1.5px solid black;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  width: 275px;
+  align-self: center;
+}
+
+.Cuenta a {
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.CerrarSesion {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  padding: 8px;
+  width: 175px;
+  margin-top: 12px;
+  margin-left: 80px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.CerrarSesion a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.AgregarTarjeta {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  font-family: "Space Grotesk";
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.AgregarTarjeta h1 {
+  color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 3.2rem;
+}
+
+.Form-AgregarTarjeta {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.Form-AgregarTarjeta p {
+  font-size: 2rem;
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 8px;
+  width: 240px;
+  font-size: 1.6rem;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.btn-GuardarTarjeta {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 8px;
+  width: 175px;
+  margin-top: 20px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.CompartirPerfil {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 535px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  font-family: "Space Grotesk";
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.CompartirPerfil h1 {
+  color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 3.2rem;
+}
+
+.CompartirPerfil p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.QR {
+  height: 225px;
+  width: 225px;
+  padding-top: 10px;
+  margin-left: 55px;
+}
+
+.CopiarLink {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  padding: 8px;
+  width: 175px;
+  margin-top: 20px;
+  margin-left: 80px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.Compartir {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px;
+  width: 175px;
+  margin-top: 12px;
+  margin-left: 80px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.logo,
+.avatar-photo {
+  display: none;
+}
+
+.Logo-FondoBlanco {
+  height: 15px;
+  width: 100px;
+  margin-top: 30px;
+  margin-left: 120px;
+}
+
+.detalle {
+  display: none;
+}
+
+/* estilos del contenido de Notificaciones (copiados de Notificaciones.css) */
+.detalle .card {
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2.5rem;
+  overflow: auto;
+  font-family: "Space Grotesk";
+}
+
+.detalle .title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-left: 2.5rem;
+  margin-top: 2rem;
+  position: sticky;
+  top: 10px;
+}
+
+.detalle .new {
+  font-weight: bold;
+}
+
+.detalle .notificaciones-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.detalle .notificacion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 8rem;
+  position: relative;
+}
+
+.detalle .notificacion-title {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-left: 3rem;
+  position: relative;
+}
+
+.detalle .notificacion-description {
+  font-size: 1.2rem;
+  color: #6b6b6b;
+  margin-left: 3rem;
+  margin-bottom: -2rem;
+}
+
+.detalle .notificacion-circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #d62828;
+  border-radius: 50%;
+  position: absolute;
+  top: -1.2rem;
+  left: -1rem;
+}
+
+.detalle .divisor {
+  width: 80%;
+  height: 2px;
+  background-color: #6b6b6b;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 9rem;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: min(110rem, calc(100% - 4rem));
+    height: auto;
+    margin: 3rem auto;
+  }
+
+  .btn-volver {
+    display: block;
+  }
+
+  .profile {
+    flex: 0 0 9rem;
+    transform: none;
+  }
+
+  .Usuario {
+    margin: 0;
+  }
+
+  .Cuenta,
+  .AgregarTarjeta,
+  .CompartirPerfil {
+    width: min(72rem, calc(100% - 4rem));
+    height: auto;
+    margin: 3rem auto;
+    padding: 2rem 3rem 3rem;
+  }
+
+  .Cuenta {
+    min-height: 0;
+    gap: 1rem;
+  }
+
+  .Cuenta p {
+    width: min(58rem, 100%);
+    padding: 2rem 1rem;
+  }
+
+  .CerrarSesion,
+  .CopiarLink,
+  .Compartir {
+    display: block;
+    margin: 1rem auto;
+  }
+
+  .logo,
+  .avatar-photo {
+    display: none;
+  }
+
+  .Form-AgregarTarjeta {
+    padding: 2rem 0 0;
+  }
+
+  input {
+    width: min(42rem, 100%);
+  }
+
+  .CompartirPerfil {
+    width: min(52rem, calc(100% - 4rem));
+    align-items: center;
+  }
+
+  .CompartirPerfil h1 {
+    align-self: stretch;
+    padding-left: 0;
+  }
+
+  .QR {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    padding-top: 0;
+  }
+
+  .Logo-FondoBlanco {
+    margin: 2rem auto 0;
+  }
+
+.detalle  .editar-vector{
+  display: block;
+    margin-left: 1.5rem;
+}
+
+.detalle  .registro h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-left: 2.5rem;
+  margin-top: 2rem;
+  /* position: sticky; */
+  top: 10px;
+}
+
+.detalle .form-registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.detalle .form-registro p {
+  font-size: 2rem;
+}
+
+.detalle .form-registro input {
+  width: 80%;
+  height: 4rem;
+  border-radius: 1rem;
+  border: none;
+  border-bottom: 3px solid gray;
+}
+
+.detalle .btn-guardar{
+         background-color: #D62828;
+    color: white;
+    border: none;
+    border-bottom: 3px solid gray;
+    padding: 8px;
+    width: 175px;
+    margin-top: 20px;
+    border-radius: 13px;
+    font-size: 1.8rem;
+}
+
+.detalle .AgregarTarjeta {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  font-family: "Space Grotesk";
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.detalle .AgregarTarjeta h1 {
+  color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 3.2rem;
+}
+
+.detalle .Form-AgregarTarjeta {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.detalle .Form-AgregarTarjeta p {
+  font-size: 2rem;
+}
+
+.detalle .btn-GuardarTarjeta {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 8px;
+  width: 175px;
+  margin-top: 20px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.detalle .CompartirPerfil {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 535px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  font-family: "Space Grotesk";
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detalle .CompartirPerfil h1 {
+  color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 3.2rem;
+}
+
+.detalle .CompartirPerfil p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.detalle .QR {
+  height: 225px;
+  width: 225px;
+  padding-top: 10px;
+  margin-left: 55px;
+}
+
+.detalle .CopiarLink {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  padding: 8px;
+  width: 175px;
+  margin-top: 20px;
+  margin-left: 80px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.detalle .Compartir {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px;
+  width: 175px;
+  margin-top: 12px;
+  margin-left: 80px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+  footer {
+    height: 7rem;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .options {
+    flex: 0 1 18rem;
+    text-align: center;
+  }
+
+  .options a{
+    padding: 0.8rem 1rem;
+    font-size: 1.6rem;
+  }
+
+  options::before{
+    inset: 0;
+    width: 0.3rem;
+    background-color: #d62828;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile h1 {
+    font-size: 4rem;
+  }
+
+  body {
+    padding: 0 0 0 24rem;
+  }
+
+  main{
+    height: 70rem;
+  }
+
+  footer {
+    top: 0;
+    bottom: auto;
+    width: 24rem;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 3rem 0;
+    margin: 0;
+  }
+
+  .CerrarSesion{
+    margin-top: 5rem;
+    height: 5rem;
+    width: 18rem;
+  }
+
+  .logo {
+    display: block;
+    order: 0;
+    width: 100%;
+    max-width: 21rem;
+    height: auto;
+    padding: 0 2.5rem 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .logo-ticket{
+            max-width: min(28rem, 35vw);
+        max-height: 8rem;
+        object-fit: contain;
+        margin: 0;
+  }
+
+  .logo img {
+    display: block;
+    width: 100%;
+    max-width: 16rem;
+    height: auto;
+  }
+
+  #deudas-deudores {
+    order: 1;
+  }
+  #ticket {
+    order: 2;
+  }
+  #amigos {
+    order: 3;
+  }
+  #cuenta {
+    order: 4;
+  }
+
+  .avatar-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 5;
+    margin-top: auto;
+    margin-left: 2rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: #6b6b6b;
+  }
+
+  .avatar-photo h1 {
+    font-family: "Space Grotesk";
+    font-size: 4rem;
+    color: white;
+  }
+
+  .options {
+    flex: none;
+    text-align: left;
+    border-radius: 0;
+    overflow: visible;
+    height: 5rem;
+  }
+
+  .options::before {
+    inset: 0 auto 0 0;
+    width: 0.3rem;
+  }
+
+  .options a {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+  }
+
+  header {
+    width: min(90rem, calc(100% - 6rem));
+  }
+
+  .cuenta-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 10rem;
+    width: min(100rem, calc(100% - 6rem));
+    margin: 0 auto;
+    height: 50rem;
+  }
+
+  .Cuenta {
+    flex: 1 1 0;
+    max-width: 42rem;
+    width: auto;
+    margin: 0;
+  }
+
+  .Cuenta p.activa {
+    border-bottom-color: #d62828;
+  }
+
+  .detalle {
+    display: block;
+    flex: 1 1 0;
+    max-width: 42rem;
+  }
+
+  /* mientras no hayas hecho clic, el panel no se ve */
+  .detalle:empty {
+    display: none;
+  }
+
+  .detalle .card {
+    width: 100%;
+    height: 100%;
+    min-height: 45rem;
+    overflow: auto;
+  }
+
+  .detalle .card:has(.registro){
+    height: 60rem;
+    overflow: hidden;
+  }
+
+  .detalle .card .registro .form-registro{
+    gap: 1.2rem;
+  }
+
+  .detalle .AgregarTarjeta,
+  .detalle .CompartirPerfil {
+    width: 100%;
+    margin: 0;
+  }
+
+  .detalle .card:has(.AgregarTarjeta){
+    height: 55rem;
+    overflow: hidden;
+  }
+
+  .detalle .card:has(.CompartirPerfil){
+    height: 60rem;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .detalle .card .CompartirPerfil .QR{
+    margin: 0 auto;
+  }
+
+    .detalle .card .CompartirPerfil .CopiarLink{
+    margin: 0 auto;
+    margin-top: 4rem;
+  }
+
+  .detalle .card .CompartirPerfil .Compartir{
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}

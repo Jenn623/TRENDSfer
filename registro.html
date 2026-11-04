@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estilos.css">
+    <link rel="shortcut icon" href="img/arrows.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <title>Crear Cuenta</title>
+</head>
+<body>
+    <div class="foco" aria-hidden="true"></div>
+    <header><img class="logoRegistro" src="./img/Logo-TRENDSfer.jpeg" alt="TRENDSfer"></header>
+<main>
+    <section>
+        <div class="registro">
+            <h1>Crear Cuenta</h1>
+            <form class="form-registro" action="./index.html">
+                <p>Nombre</p>
+                <input type="text" name="nombre" placeholder="Nombre(s)" required>
+
+                <p>Apellidos</p>
+                <input type="text" name="apellidos" placeholder="Apellido(s)" required>
+
+                <p>Apodo</p>
+                <input type="text" name="apodo" placeholder="Apodo" required>
+
+                <p>Correo electronico</p>
+                <input type="email" name="correo" placeholder="tu@correo.com" required>
+
+                <p>Contraseña</p>
+                <input type="password" name="contrasena" placeholder="******" required>
+               
+                <button class="btn-registro" type="submit">Crear Cuenta</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+    <footer><img class="footer-crearCuenta" src="./img/Logo-ITRENDS.jpeg" alt="ITRENDS"></footer>
+    <script type="module" src="./registro.js"></script>
+</body>
+</html>

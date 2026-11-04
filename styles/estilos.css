@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+.logo {
+  margin-top: 10rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoRegistro {
+  margin-top: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.IniciarSesion {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 475px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  font-family: "Space Grotesk";
+}
+.IniciarSesion h1 {
+  color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 3.2rem;
+}
+
+.formIniciar-sesion {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.formIniciar-sesion p {
+  font-size: 2rem;
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 8px;
+  width: 240px;
+  font-size: 1.6rem;
+  border-radius: 13px;
+}
+
+.link-olvidarcontraseña {
+  color: gray;
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+
+.btn-iniciarsesion {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 8px;
+  width: 175px;
+  margin-top: 20px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.link-crearCuenta {
+  color: gray;
+  font-size: 1.6rem;
+}
+
+.formIniciar-sesion .link-crearCuenta {
+  color: gray;
+  font-size: 1.6rem;
+}
+
+.link-crearCuenta a {
+  color: #d62828;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.footer-iniciarsesion {
+  margin-top: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recuperarContraseña {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 475px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.recuperarContraseña h1 {
+  color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  max-width: 300px;
+  font-size: 30px;
+  font-family: "Space Grotesk";
+}
+
+.form-recuperarContraseña {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.form-recuperarContraseña input {
+  margin-top: 28px;
+}
+
+.btn-enviarRecuperarContraseña {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 8px;
+  width: 175px;
+  margin-top: 20px;
+  border-radius: 13px;
+  font-size: 18px;
+}
+
+.registro {
+  background-color: #d9d9d9;
+  display: block;
+  border-radius: 25px;
+  width: 330px;
+  height: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.registro h1 {
+  color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  max-width: 300px;
+  font-size: 3.2rem;
+  font-family: "Space Grotesk";
+}
+
+.form-registro {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-family: "Space Grotesk";
+  font-size: 2.4rem;
+}
+
+.btn-registro {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 8px;
+  width: 175px;
+  margin-top: 20px;
+  border-radius: 13px;
+  font-size: 1.8rem;
+}
+
+.footer-crearCuenta {
+  margin-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  body {
+    min-height: 100vh;
+    height: auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    position: relative;
+    background: linear-gradient(to right, black 50%, white 50%);
+  }
+
+  .foco {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: min(32rem, 20vw);
+    aspect-ratio: 231 / 350;
+    transform: translate(-50%, -50%);
+  }
+
+  .foco::before,
+  .foco::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 0.4s ease;
+  }
+
+  .foco::before {
+    background-image: url("../img/Foco-Apagado.png");
+    opacity: 1;
+  }
+
+  .foco::after {
+    background-image: url("../img/Foco-Encendido.png");
+    opacity: 0;
+  }
+
+  .foco:hover::before {
+    opacity: 0;
+  }
+
+  .foco:hover::after {
+    opacity: 1;
+  }
+
+  header {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+  }
+
+  main {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+  }
+
+  footer {
+    top: 0;
+    bottom: auto;
+    width: 24rem;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 3rem 0;
+    margin: 0;
+  }
+
+  .logo,
+  .logoRegistro {
+    width: min(24rem, 24vw);
+    max-height: 12rem;
+    object-fit: contain;
+    margin: 0;
+  }
+
+  .IniciarSesion,
+  .recuperarContraseña,
+  .registro {
+    width: min(48rem, calc(100% - 4rem));
+    height: auto;
+    min-height: 0;
+    margin: 2rem auto;
+    padding-bottom: 2.5rem;
+  }
+
+  .formIniciar-sesion,
+  .form-recuperarContraseña,
+  .form-registro {
+    padding: 3rem 2rem 0;
+  }
+
+  input {
+    width: min(34rem, 100%);
+  }
+
+  .footer-iniciarsesion,
+  .footer-crearCuenta {
+    width: min(14rem, 20vw);
+    margin: 0 0 0 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    /* min-height: 100vh; */
+    height: 100%;
+    /* height: auto; */
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 80% 10%;
+    /* position: relative; */
+    background: linear-gradient(to right, black 50%, white 50%);
+  }
+
+  /* .foco {
+    /* position: absolute; */
+    /* left: 25%;
+    /* top: 50%; */
+    /* width: min(32rem, 20vw);
+    aspect-ratio: 231 / 350; */ 
+    /* transform: translate(-50%, -50%); */
+  /* } */ 
+
+  .foco::before,
+  .foco::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 0.4s ease;
+  }
+
+  .foco::before {
+    background-image: url("../img/Foco-Apagado.png");
+    opacity: 1;
+  }
+
+  .foco::after {
+    background-image: url("../img/Foco-Encendido.png");
+    opacity: 0;
+  }
+
+  .foco:hover::before {
+    opacity: 0;
+  }
+
+  .foco:hover::after {
+    opacity: 1;
+  }
+
+  header {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+  }
+
+  main {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+  }
+
+  footer {
+    top: 0;
+    bottom: auto;
+    width: 24rem;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 3rem 0;
+    margin: 0;
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .logo,
+  .logoRegistro {
+    width: min(24rem, 24vw);
+    max-height: 12rem;
+    object-fit: contain;
+    margin: 0;
+  }
+
+  .IniciarSesion,
+  .recuperarContraseña,
+  .registro {
+    width: min(48rem, calc(100% - 4rem));
+    height: auto;
+    min-height: 0;
+    margin: 2rem auto;
+    padding-bottom: 2.5rem;
+
+  }
+
+  .formIniciar-sesion,
+  .form-recuperarContraseña,
+  .form-registro {
+    padding: 3rem 2rem 0;
+  }
+
+  .recuperarContraseña h1, p{
+        font-family: 'Space Grotesk';
+  }
+
+  input {
+    width: min(34rem, 100%);
+  }
+
+  .footer-iniciarsesion,
+  .footer-crearCuenta {
+    width: min(14rem, 20vw);
+    margin: 0 0 0 1rem;
+  }
+}

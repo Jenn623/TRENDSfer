@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title> 
+    <link rel="shortcut icon" href="img/arrows.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/principal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body class="ticket-page">
+    <header>
+        <picture>
+            <source media="(min-width: 768px)" srcset="img/Logo-FondoGris.svg">
+            <img src="./img/Logo-TRENDSfer.jpeg" alt="TRENDSfer" class="logo-ticket">
+        </picture>
+        <div class="profile">
+            <h1>L</h1>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="Ticket">
+                <h1>Crear Ticket</h1>
+                <form class="Form-Ticket" action="./ticket.html">
+                    <label for="buscador-deudores">Deudor</label> 
+                    <input type="text" id="buscador-deudores" name="deudor" list="Nombres-Registrados" pattern="Diego|Miguel|Ruben|Ing\.Carlos" required>
+                    <div class="AgregarAmigo">
+                    <p> ¿No encuentras a la persona?<a href="./amigos.html"> Agrégala en Amigos</a></p>
+                    </div>
+                    <datalist id="Nombres-Registrados">
+                        <option value="Diego"></option>
+                        <option value="Miguel"></option>
+                        <option value="Ruben"></option>
+                        <option value="Ing.Carlos"></option>
+                    </datalist>
+
+                    <p>Monto</p>
+                    <input type="number" name="Monto" placeholder="$0.00" required>
+
+                    <p>Concepto</p>
+                    <input type="text" name="Concepto" placeholder="Ejem: Oxxo" required>
+                    <button type="submit">Confirmar</button>
+                    <p class="ticket-notification">Se le notificará al deudor</p>
+                </form>
+            </div>
+        </section>
+    </main>
+        <footer>
+        <div class="options active" id="ticket"><a href="./ticket.html">Ticket</a></div>
+        <div class="options" id="deudas-deudores"><a href= "./principal.html">Deudas/Deudores</a></div>
+        <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
+        <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
+        <img class="logo-footer" src="./img/svg_TRENDSfer.svg" alt="TRENDSfer">
+        <div class="avatar-photo">
+            <h1>L</h1>
+        </div>
+    </footer>
+</body>
+</html>

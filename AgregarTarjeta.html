@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Tarjeta</title>
+    <link rel="shortcut icon" href="img/arrows.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/cuenta.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+         <div class="btn-volver">
+        <p><a href="./cuenta.html">< volver</a></p>
+      </div>
+        <div class="profile">
+            <h1>L</h1>
+        </div>
+        <h1 class="Usuario">Lalo</h1>
+    </header>
+    <main>
+        <section class="card">
+            <div class="AgregarTarjeta">
+                <h1>Agregar Tarjeta(s)</h1>
+                <form class="Form-AgregarTarjeta">
+                    <p>Numero de Cuenta</p>
+                    <input type="number" name="NumeroCuenta" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+
+                    <p>Nombre del Titular</p>
+                    <input type="text" name="Nombre" placeholder="ABCDE" required>
+
+                    <p>Fecha de Vencimiento</p>
+                    <input type="date" name="FechaVencimiento" required> 
+
+                    <button class="btn-GuardarTarjeta" type="submit">Guardar Tarjeta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer><div class="options" id="ticket"><a href="./ticket.html">Ticket</a></div>
+        <div class="options" id="deudas-deudores"><a href= "./principal.html">Deudas/Deudores</a></div>
+        <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
+        <div class="options active" id="cuenta"><a href="./cuenta.html">Cuenta</a></div></footer>
+</body>
+</html>
