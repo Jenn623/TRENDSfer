@@ -60,6 +60,12 @@ body {
   justify-content: space-evenly;
 }
 
+.dashboard-greeting {
+  margin-left: 1.5rem;
+  color: #6b6b6b;
+  font-size: 1.6rem;
+}
+
 .saldos {
   margin-left: 1.5rem;
 }

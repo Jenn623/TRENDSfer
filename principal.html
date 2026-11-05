@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +17,14 @@
         <img src="./img/Logo-TRENDSfer.jpeg" alt="TRENDSfer" class="logo">
     </picture>
         <div class="profile">
-            <h1>L</h1>
+            <h1 data-usuario-inicial>U</h1>
         </div>
     </header>
     <main>
         <section class="dashboard-layout">
             <div class="container">
                 <div class="resumen">
+                    <p class="dashboard-greeting" data-usuario-nombre></p>
                     <div class="saldos">
                         <h1>Tickets de saldos</h1>
                     </div>
@@ -32,17 +33,17 @@
                         <p>Debes</p>
                     </div>
                     <div class="montos-saldos">
-                        <h3 id="deben">$1000.00</h3>
-                        <h3 id="debes">$700.00</h3>
-                    </div>
+                    <!---- <h3 id="deben">$1000.00</h3>
+                        <h3 id="debes">$700.00</h3> -->
+                    </div> 
                 </div>
                 <div class="ticket-division"></div>
                 <div class="resumen-deudas">
-                    <div class="deudas-title">
+                    <!-- <div class="deudas-title">
                         <h3>Deudas</h3>
-                    </div>
+                    </div> -->
                     <div class="deudas-persona">
-                        <p class="nombre"><a href="./PagarDeuda.html">Ruben</a></p>
+                        <!-- <p class="nombre"><a href="./PagarDeuda.html">Ruben</a></p>
                         <p class="monto">$500.00</p>
                     </div>
                     <div class="divider"></div>
@@ -62,22 +63,22 @@
                     </div>
                     <div class="divider"></div>
                     <div class="deudor-persona">
-                        <p class="nombre">Miguel</p>
-                        <p class="monto">$200.00</p>
+                         <p class="nombre">Miguel</p>
+                        <p class="monto">$200.00</p> --> 
                     </div>
                 </div>
             </div>
             <aside class="dashboard-side">
                 <div class="notifications-empty">
-                    <p>Sin notificaciones el día de hoy</p>
+                    <!-- <p>Sin notificaciones el día de hoy</p> -->
                 </div>
                 <div class="dashboard-payment">
-                    <h2>Pagar</h2>
+                    <!-- <h2>Pagar</h2>
                     <img src="./img/qr-code.png" alt="Código QR para pagar">
                     <p class="payment-amount">$500.00</p>
                     <p class="payment-description">Concepto: Oxxo</p>
                     <a class="payment-button" href="./PagarDeuda.html">Ya pagué</a>
-                    <p class="payment-hint">Escanéalo con tu app bancaria</p>
+                    <p class="payment-hint">Escanéalo con tu app bancaria</p> -->
                 </div>
             </aside>
         </section>
@@ -92,8 +93,9 @@
         <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
         <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
         <div class="avatar-photo">
-            <h1>L</h1>
+            <h1 data-usuario-inicial>U</h1>
         </div>
     </footer>
+    <script type="module" src="principal.js"></script>
 </body>
 </html>
