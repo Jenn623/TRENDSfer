@@ -239,6 +239,7 @@ footer {
 .logo-ticket {
   margin-top: 25px;
 }
+
 .Ticket {
   background-color: #d9d9d9;
   display: block;
@@ -1416,5 +1417,89 @@ button {
 
   .ticket-division::after {
     right: -0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-page .dashboard-greeting {
+    font-size: 1.4rem;
+  }
+
+  .dashboard-page .saldos h1 {
+    font-size: 2.4rem;
+  }
+
+  .dashboard-page .estados-saldos p {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-page .montos-saldos h3 {
+    font-size: 2.2rem;
+  }
+
+  .dashboard-page .deudas-title h3,
+  .dashboard-page .deudores-title h3 {
+    font-size: 2.4rem;
+  }
+
+  .dashboard-page .deudas-persona p,
+  .dashboard-page .deudor-persona p {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-page .deudas-persona,
+  .dashboard-page .deudor-persona {
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0.8rem;
+  }
+
+  .dashboard-page .deudas-persona .nombre,
+  .dashboard-page .deudor-persona .nombre {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .dashboard-page .deudas-persona .monto,
+  .dashboard-page .deudor-persona .monto {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+
+  .ticket-page .Ticket {
+    width: min(36rem, calc(100% - 3.2rem));
+    height: auto;
+    margin: 11rem auto 7rem;
+    padding: 0 1.2rem 2rem;
+  }
+
+  .ticket-page .Ticket h1 {
+    font-size: 2.6rem;
+  }
+
+  .ticket-page .Form-Ticket {
+    gap: 1.4rem;
+    padding-top: 2.4rem;
+    font-size: 1.6rem;
+  }
+
+  .ticket-page .Form-Ticket label,
+  .ticket-page .Form-Ticket > p {
+    font-size: 1.6rem;
+  }
+
+  .ticket-page .Form-Ticket input,
+  .ticket-page .Form-Ticket select {
+    font-size: 1.5rem;
+  }
+
+  .ticket-page .AgregarAmigo p {
+    font-size: 1.2rem;
+  }
+
+  .ticket-page .Form-Ticket button {
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
   }
 }

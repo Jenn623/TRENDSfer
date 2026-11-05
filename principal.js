@@ -90,7 +90,7 @@ async function iniciarPagina() {
 		const nombrePerfil = sesion.perfil.apodo || sesion.perfil.nombre || sesion.authUser.email || 'Usuario';
 		const inicial = nombrePerfil.trim().charAt(0).toUpperCase() || 'U';
 		document.querySelectorAll('[data-usuario-nombre]').forEach((elemento) => {
-			elemento.textContent = nombrePerfil;
+			elemento.textContent = `Hola, ${nombrePerfil}`;
 		});
 		document.querySelectorAll('[data-usuario-inicial]').forEach((elemento) => {
 			elemento.textContent = inicial;
