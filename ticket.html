@@ -24,7 +24,7 @@
         <section>
             <div class="Ticket">
                 <h1>Crear Ticket</h1>
-                <form class="Form-Ticket" action="./ticket.html">
+                <form class="Form-Ticket">
                     <label for="buscador-deudores">Deudor</label> 
                     <input type="text" id="buscador-deudores" name="deudor" list="Nombres-Registrados" pattern="Diego|Miguel|Ruben|Ing\.Carlos" required>
                     <div class="AgregarAmigo">
@@ -38,7 +38,7 @@
                     </datalist>
 
                     <p>Monto</p>
-                    <input type="number" name="Monto" placeholder="$0.00" required>
+                    <input type="number" name="Monto" placeholder="$0.00" min="0.01" step="0.01" required>
 
                     <p>Concepto</p>
                     <input type="text" name="Concepto" placeholder="Ejem: Oxxo" required>
