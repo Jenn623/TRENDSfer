@@ -1,61 +1,77 @@
-const CLAVE_SESION = 'usuarioSesion';
-const CLAVE_TICKETS = 'ticketsTRENDSfer';
+import { supabase } from './supabase.js';
+import { obtenerPerfilActual } from './auth-profile.js';
+
 const formulario = document.querySelector('.Form-Ticket');
+const selectorDeudor = formulario?.elements.deudor;
 
-if (formulario) {
-	formulario.addEventListener('submit', (evento) => {
-		evento.preventDefault();
-
-		let usuario;
-		let tickets;
-
-		try {
-			usuario = JSON.parse(localStorage.getItem(CLAVE_SESION));
-			tickets = JSON.parse(localStorage.getItem(CLAVE_TICKETS) || '[]');
-		} catch (error) {
-			alert('No se pudo leer la sesión o los tickets guardados.');
-			return;
-		}
-
-		if (!usuario || typeof usuario !== 'object') {
+async function cargarUsuarios() {
+	try {
+		const sesion = await obtenerPerfilActual();
+		if (!sesion) {
 			window.location.replace('index.html');
 			return;
 		}
 
-		const correoCreador = usuario.email || usuario.correo;
-		const monto = Number(formulario.elements.Monto.value);
+		const { data: usuarios, error } = await supabase
+			.from('Usuarios')
+			.select('id_usuarios, nombre, apellido, apodo, email')
+			.neq('id_usuarios', sesion.perfil.id_usuarios)
+			.order('apodo', { ascending: true });
 
-		if (!correoCreador) {
-			alert('La sesión no contiene el correo del usuario. Vuelve a iniciar sesión.');
-			window.location.replace('index.html');
-			return;
-		}
+		if (error) throw error;
 
-		if (!Number.isFinite(monto) || monto <= 0) {
-			alert('Ingresa un monto mayor que cero.');
-			return;
-		}
-
-		if (!Array.isArray(tickets)) {
-			tickets = [];
-		}
-
-		tickets.push({
-			id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`,
-			correoCreador,
-			deudor: formulario.elements.deudor.value.trim(),
-			monto,
-			concepto: formulario.elements.Concepto.value.trim(),
-			fecha: new Date().toISOString()
+		usuarios.forEach((usuario) => {
+			const opcion = document.createElement('option');
+			const nombre = usuario.apodo || usuario.nombre;
+			opcion.value = usuario.id_usuarios;
+			opcion.textContent = `${nombre} (${usuario.email})`;
+			selectorDeudor.append(opcion);
 		});
 
-		try {
-			localStorage.setItem(CLAVE_TICKETS, JSON.stringify(tickets));
-		} catch (error) {
-			alert('No se pudo guardar el ticket en este navegador.');
-			return;
+		if (usuarios.length === 0) {
+			selectorDeudor.disabled = true;
+			alert('No hay otros usuarios registrados para recibir el ticket.');
 		}
+	} catch (error) {
+		console.error('No se pudieron cargar los usuarios:', error);
+		alert('No se pudieron cargar los usuarios: ' + error.message);
+	}
+}
 
-		window.location.href = 'principal.html';
+if (formulario) {
+	cargarUsuarios();
+
+	formulario.addEventListener('submit', async (evento) => {
+		evento.preventDefault();
+
+		try {
+			const sesion = await obtenerPerfilActual();
+			if (!sesion) {
+				window.location.replace('index.html');
+				return;
+			}
+
+			const monto = Number(formulario.elements.Monto.value);
+			const concepto = formulario.elements.Concepto.value.trim();
+			const idDeudor = selectorDeudor.value;
+
+			if (!idDeudor || !Number.isFinite(monto) || monto <= 0 || !concepto) {
+				alert('Selecciona un usuario e ingresa un monto y concepto válidos.');
+				return;
+			}
+
+			const { error } = await supabase.from('Tickets').insert({
+				id_acreedor: sesion.perfil.id_usuarios,
+				id_deudor: idDeudor,
+				monto,
+				concepto
+			});
+
+			if (error) throw error;
+			window.location.href = 'principal.html';
+		} catch (error) {
+			console.error('No se pudo crear el ticket:', error);
+			alert('No se pudo crear el ticket: ' + error.message);
+		}
 	});
 }

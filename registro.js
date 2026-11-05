@@ -64,23 +64,22 @@ if (formRegistro) {
         const contraseña = formRegistro.querySelector('input[name="contrasena"]').value;
 
         try {
-            // Generamos un ID único simulado (UUID) o dejamos que Supabase maneje el registro directo
-            // Insertamos directamente en tu tabla Usuarios de la base de datos
-            const { error: dbError } = await supabase
-                .from('Usuarios')
-                .insert([
-                    { 
-                        nombre: nombre, 
-                        apellido: apellidos,
-                        apodo: apodo,
-                        email: email,
-                        contraseña: contraseña // (Nota: en producción las contraseñas van cifradas, pero para pruebas locales funciona)
-                    }
-                ]);
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password: contraseña,
+                options: {
+                    data: { nombre, apellido: apellidos, apodo }
+                }
+            });
 
-            if (dbError) throw dbError;
+            if (error) throw error;
 
-            alert('¡Cuenta creada con éxito!');
+            if (data.session) {
+                window.location.href = 'principal.html';
+                return;
+            }
+
+            alert('Cuenta creada. Revisa tu correo para confirmar el registro.');
             window.location.href = 'index.html';
 
         } catch (error) {

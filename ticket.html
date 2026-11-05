@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,17 +25,13 @@
             <div class="Ticket">
                 <h1>Crear Ticket</h1>
                 <form class="Form-Ticket">
-                    <label for="buscador-deudores">Deudor</label> 
-                    <input type="text" id="buscador-deudores" name="deudor" list="Nombres-Registrados" pattern="Diego|Miguel|Ruben|Ing\.Carlos" required>
+                    <label for="buscador-deudores">Deudor</label>
+                    <select id="buscador-deudores" name="deudor" required>
+                        <option value="">Selecciona un usuario</option>
+                    </select>
                     <div class="AgregarAmigo">
-                    <p> ¿No encuentras a la persona?<a href="./amigos.html"> Agrégala en Amigos</a></p>
+                    <p>Los tickets se comparten con usuarios registrados.</p>
                     </div>
-                    <datalist id="Nombres-Registrados">
-                        <option value="Diego"></option>
-                        <option value="Miguel"></option>
-                        <option value="Ruben"></option>
-                        <option value="Ing.Carlos"></option>
-                    </datalist>
 
                     <p>Monto</p>
                     <input type="number" name="Monto" placeholder="$0.00" min="0.01" step="0.01" required>

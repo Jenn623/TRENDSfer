@@ -1,3 +1,5 @@
+import { supabase } from './supabase.js';
+
 /* variables para manejar la presentacion de las cards */
 const desktop = window.matchMedia('(min-width: 1024px)');
 const detalle = document.getElementById('detalle');
@@ -30,5 +32,16 @@ filas.forEach(fila => {
         e.preventDefault();
         cargar(fila);
     });
+});
+
+document.querySelector('.CerrarSesion a')?.addEventListener('click', async (evento) => {
+    evento.preventDefault();
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+        alert('No se pudo cerrar la sesión: ' + error.message);
+        return;
+    }
+    localStorage.removeItem('usuarioSesion');
+    window.location.replace('./index.html');
 });
 

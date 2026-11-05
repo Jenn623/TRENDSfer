@@ -1,4 +1,5 @@
 import { supabase } from './supabase.js';
+import { obtenerPerfilActual } from './auth-profile.js';
 
 const formLogin = document.querySelector('.formIniciar-sesion');
 
@@ -19,36 +20,28 @@ if (formLogin) {
         const correoIngresado = correoInput.value.trim();
         const contrasenaIngresada = contrasenaInput.value.trim();
 
-        console.log('Intentando iniciar sesión con:', correoIngresado);
-
         try {
-            // Intentar buscar directamente en la tabla Usuarios
-            const { data: usuario, error: dbError } = await supabase
-                .from('Usuarios')
-                .select('nombre, apellido, apodo, email')
-                .eq('email', correoIngresado)
-                .eq('contraseña', contrasenaIngresada);
+            const { error: authError } = await supabase.auth.signInWithPassword({
+                email: correoIngresado,
+                password: contrasenaIngresada
+            });
 
-            console.log('Resultado de la base de datos:', usuario, dbError);
+            if (authError) throw authError;
 
-            if (dbError) {
-                throw dbError;
+            const sesion = await obtenerPerfilActual();
+            if (!sesion) {
+                await supabase.auth.signOut();
+                throw new Error('No se encontró el perfil vinculado a esta cuenta. Ejecuta primero la migración de Supabase.');
             }
 
-            if (!usuario || usuario.length === 0) {
-                alert('Correo o contraseña incorrectos. Revisa mayúsculas/minúsculas.');
-                return;
-            }
-
-            // Solo se persisten los datos de perfil, nunca la contraseña.
-            localStorage.setItem('usuarioSesion', JSON.stringify(usuario[0]));
-
-            alert('¡Bienvenido ' + usuario[0].nombre + '! Redirigiendo...');
+            localStorage.removeItem('usuarioSesion');
+            alert('¡Bienvenido ' + (sesion.perfil.apodo || sesion.perfil.nombre) + '! Redirigiendo...');
             window.location.href = 'principal.html'; 
 
         } catch (error) {
+            await supabase.auth.signOut();
             console.error('Error durante el inicio de sesión:', error);
-            alert('Error al conectar con la base de datos: ' + error.message);
+            alert('No se pudo iniciar sesión: ' + error.message);
         }
     });
 }

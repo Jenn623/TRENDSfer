@@ -268,7 +268,8 @@ footer {
   gap: 17px;
 }
 
-.Form-Ticket input {
+.Form-Ticket input,
+.Form-Ticket select {
   border: none;
   border-bottom: 3px solid gray;
   padding: 8px;
