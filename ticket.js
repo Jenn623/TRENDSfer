@@ -12,6 +12,12 @@ async function cargarUsuarios() {
 			return;
 		}
 
+		const nombrePerfil = sesion.perfil.apodo || sesion.perfil.nombre || sesion.authUser.email || 'Usuario';
+		const inicial = nombrePerfil.trim().charAt(0).toUpperCase() || 'U';
+		document.querySelectorAll('[data-usuario-inicial]').forEach((elemento) => {
+			elemento.textContent = inicial;
+		});
+
 		const { data: usuarios, error } = await supabase
 			.from('Usuarios')
 			.select('id_usuarios, nombre, apellido, apodo, email')

@@ -131,6 +131,18 @@ header {
 
 .list-solicitud {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list-friends.estado-vacio,
+.list-solicitud.estado-vacio {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
 }
 
 .solicitud {
@@ -161,12 +173,12 @@ header {
   gap: 1rem;
 }
 
-#btn-confirmar {
+.btn-confirmar {
   background-color: #d62828;
   color: white;
 }
 
-#btn-eliminar {
+.btn-eliminar {
   background-color: #bab9b9;
   color: black;
 }
@@ -178,12 +190,14 @@ input[name="tabs"] {
 /* ocultar todos los paneles por defecto */
 .panel {
   display: none;
+  height: 100%;
+  flex-direction: column;
 }
 
 /*mostrar el panel de acuerdo al boton radio*/
 #tab-amigo:checked ~ main .panel-friends,
 #tab-solicitudes:checked ~ main .panel-solicitudes {
-  display: block;
+  display: flex;
 }
 
 #tab-amigo:checked ~ .head-search label[for="tab-amigo"],
@@ -303,9 +317,10 @@ footer {
   }
 
   .panel {
-    display: block;
+    display: flex;
     flex: 0 1 35rem;
     min-height: 40rem;
+    height: auto;
     background-color: #d9d9d9;
     border-radius: 2.5rem;
     padding-bottom: 2rem;

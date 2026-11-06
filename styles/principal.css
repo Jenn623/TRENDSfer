@@ -1421,6 +1421,33 @@ button {
 }
 
 @media (max-width: 767px) {
+  .ticket-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    padding: 0;
+  }
+
+  .ticket-page main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 1rem 1.2rem;
+  }
+
+  .ticket-page main section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-height: 100%;
+    min-height: 0;
+  }
+
   .dashboard-page .dashboard-greeting {
     font-size: 1.4rem;
   }
@@ -1468,10 +1495,21 @@ button {
   }
 
   .ticket-page .Ticket {
-    width: min(36rem, calc(100% - 3.2rem));
+    width: min(36rem, 100%);
+    max-height: 100%;
     height: auto;
-    margin: 11rem auto 7rem;
+    overflow-y: auto;
+    margin: 0 auto;
     padding: 0 1.2rem 2rem;
+  }
+
+  .ticket-page footer {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 6rem;
+    flex: 0 0 6rem;
+    margin: 0;
   }
 
   .ticket-page .Ticket h1 {
