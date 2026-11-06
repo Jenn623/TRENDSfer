@@ -38,31 +38,31 @@
                     </div> 
                 </div>
                 <div class="ticket-division"></div>
-                <div class="resumen-deudas">
-                    <div class="deudas-title">
-                        <h3>Deudas</h3>
+                <div class="ticket-lists-scroll">
+                    <div class="resumen-deudas">
+                        <div class="deudas-title">
+                            <h3>Deudas</h3>
+                        </div>
+                        <div data-tickets-debo></div>
                     </div>
-                    <div data-tickets-debo></div>
-                </div>
-                <div class="ticket-division"></div>
-                <div class="resumen-deudores">
-                    <div class="deudores-title">
-                        <h3>Deudores</h3>
+                    <!-- <div class="ticket-division"></div> -->
+                    <div class="resumen-deudores">
+                        <div class="deudores-title">
+                            <h3>Deudores</h3>
+                        </div>
+                        <div data-tickets-propios></div>
                     </div>
-                    <div data-tickets-propios></div>
                 </div>
             </div>
             <aside class="dashboard-side">
                 <div class="notifications-empty">
-                    <!-- <p>Sin notificaciones el día de hoy</p> -->
+                    <h2>Notificaciones</h2>
+                    <div class="notifications-list" data-notificaciones></div>
+                    <a href="./cuenta.html?seccion=notificaciones">Ver todas</a>
                 </div>
                 <div class="dashboard-payment">
-                    <!-- <h2>Pagar</h2>
-                    <img src="./img/qr-code.png" alt="Código QR para pagar">
-                    <p class="payment-amount">$500.00</p>
-                    <p class="payment-description">Concepto: Oxxo</p>
-                    <a class="payment-button" href="./PagarDeuda.html">Ya pagué</a>
-                    <p class="payment-hint">Escanéalo con tu app bancaria</p> -->
+                    <h2>Pagar</h2>
+                    <div class="payments-list" data-pagos-aceptados></div>
                 </div>
             </aside>
         </section>

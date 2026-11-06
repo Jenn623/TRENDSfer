@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,10 +20,10 @@
       </div>
       <div class="profile-info">
         <div class="avatar">
-          <h1>L</h1>
+          <h1 data-usuario-inicial>U</h1>
         </div>
         <div class="avatar-name">
-          <h2>Lalo</h2>
+          <h2 data-usuario-nombre>Usuario</h2>
           <img class="editar-vector" src="./img/edit-vector.svg" alt="vector- editar">
         </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="card">
         <div class="registro">
           <h1>Editar Perfil</h1>
-          <form class="form-registro" action="/index.html">
+          <form class="form-registro">
             <p>Nombre(s)</p>
             <input type="text" name="nombre" placeholder="Eduardo" required />
 
@@ -48,19 +48,13 @@
             <input type="text" name="apodo" placeholder="Lalo" required />
 
             <p>Correo electronico</p>
-            <input
-              type="email"
-              name="correo"
-              placeholder="lalocabrera@gmail.com"
-              required
-            />
+            <input type="email" name="correo" placeholder="correo@ejemplo.com" required />
 
             <p>Contraseña</p>
             <input
               type="password"
               name="contrasena"
-              placeholder="******"
-              required
+              placeholder="Deja en blanco para conservarla"
             />
 
             <button class="btn-guardar" type="submit">Guardar Cambios</button>
@@ -78,5 +72,9 @@
       </div>
       <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
     </footer>
+    <script type="module">
+      import { iniciarEdicionPerfil } from './editar-perfil.js';
+      iniciarEdicionPerfil(document);
+    </script>
   </body>
 </html>

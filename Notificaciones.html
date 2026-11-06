@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,10 +20,10 @@
       </div>
       <div class="profile-info">
         <div class="avatar">
-          <h1>L</h1>
+          <h1 data-usuario-inicial>U</h1>
         </div>
         <div class="avatar-name">
-          <h2>Lalo</h2>
+          <h2 data-usuario-nombre>Usuario</h2>
         </div>
       </div>
     </header>
@@ -32,54 +32,7 @@
         <div class="title">
           <h1>Notificaciones</h1>
         </div>
-        <div class="notificaciones-list">
-          <div class="notificacion-container">
-            <div class="notificacion-title new">
-              <h3>Miguel te creó un ticket</h3>
-              <div class="notificacion-circle"></div>
-            </div>
-            <div class="notificacion-description">
-              <p>hace 5 min</p>
-            </div>
-          </div>
-          <div class="divisor"></div>
-          <div class="notificacion-container">
-            <div class="notificacion-title new">
-              <h3>Elio aceptó tu deuda</h3>
-              <div class="notificacion-circle"></div>
-            </div>
-            <div class="notificacion-description">
-              <p>ayer</p>
-            </div>
-          </div>
-          <div class="divisor"></div>
-          <div class="notificacion-container">
-            <div class="notificacion-title">
-              <h3>Diego quiere ser tu amigo</h3>
-            </div>
-            <div class="notificacion-description">
-              <p>ayer</p>
-            </div>
-          </div>
-          <div class="divisor"></div>
-          <div class="notificacion-container">
-            <div class="notificacion-title">
-              <h3>Pago confirmado</h3>
-            </div>
-            <div class="notificacion-description">
-              <p>hace 2 días</p>
-            </div>
-          </div>
-          <div class="divisor"></div>
-          <div class="notificacion-container">
-            <div class="notificacion-title">
-              <h3>Fernando te creó un ticket</h3>
-            </div>
-            <div class="notificacion-description">
-              <p>hace 1 semana</p>
-            </div>
-          </div>
-        </div>
+        <div class="notificaciones-list" data-notificaciones></div>
       </div>
     </div>
     <footer>
@@ -92,5 +45,6 @@
       </div>
       <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
     </footer>
+    <script type="module" src="notificaciones.js"></script>
   </body>
 </html>

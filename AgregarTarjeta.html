@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +16,36 @@
         <p><a href="./cuenta.html">< volver</a></p>
       </div>
         <div class="profile">
-            <h1>L</h1>
+          <h1 data-usuario-inicial>U</h1>
         </div>
-        <h1 class="Usuario">Lalo</h1>
+      <h1 class="Usuario" data-usuario-nombre>Usuario</h1>
     </header>
     <main>
         <section class="card">
             <div class="AgregarTarjeta">
-                <h1>Agregar Tarjeta(s)</h1>
+                <h1>Agregar cuenta CoDi</h1>
                 <form class="Form-AgregarTarjeta">
-                    <p>Numero de Cuenta</p>
-                    <input type="number" name="NumeroCuenta" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                    <label for="alias-cuenta">Alias (opcional)</label>
+                    <input id="alias-cuenta" type="text" name="alias" maxlength="80" placeholder="Mi cuenta">
 
-                    <p>Nombre del Titular</p>
-                    <input type="text" name="Nombre" placeholder="ABCDE" required>
+                    <label for="clabe-interbancaria">CLABE interbancaria</label>
+                    <input id="clabe-interbancaria" type="text" name="clabeInterbancaria" inputmode="numeric" autocomplete="off" maxlength="18" pattern="[0-9]{18}" placeholder="18 dígitos" required>
 
-                    <p>Fecha de Vencimiento</p>
-                    <input type="date" name="FechaVencimiento" required> 
+                    <label for="banco">Banco</label>
+                    <input id="banco" type="text" name="banco" maxlength="100" autocomplete="organization" placeholder="Nombre del banco" required>
 
-                    <button class="btn-GuardarTarjeta" type="submit">Guardar Tarjeta</button>
+                    <label for="nombre-titular">Nombre del titular</label>
+                    <input id="nombre-titular" type="text" name="nombreTitular" maxlength="150" autocomplete="name" placeholder="Nombre del titular" required>
+
+                    <label for="numero-celular">Número celular (opcional)</label>
+                    <input id="numero-celular" type="tel" name="numeroCelular" maxlength="20" autocomplete="tel" placeholder="Número asociado a CoDi">
+
+                    <label for="id-registro-codi">ID de registro CoDi (opcional)</label>
+                    <input id="id-registro-codi" type="text" name="idRegistroCodi" maxlength="100" placeholder="ID proporcionado por CoDi">
+
+                    <button class="btn-GuardarTarjeta" type="submit">Guardar cuenta</button>
                 </form>
+                <div class="tarjetas-guardadas" data-tarjetas-guardadas aria-live="polite"></div>
             </div>
         </section>
     </main>
@@ -43,5 +53,9 @@
         <div class="options" id="deudas-deudores"><a href= "./principal.html">Deudas/Deudores</a></div>
         <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
         <div class="options active" id="cuenta"><a href="./cuenta.html">Cuenta</a></div></footer>
+    <script type="module">
+        import { iniciarCuentasCodi } from './cuentas-codi.js';
+        iniciarCuentasCodi(document);
+    </script>
 </body>
 </html>

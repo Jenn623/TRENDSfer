@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,23 +10,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header><img src=img/Logo-TRENDSfer.jpeg alt="TRENDSfer" class="logo-ticket"></header>
+<body class="ticket-page aceptar-deuda-page">
+    <header>
+        <picture>
+            <img src="./img/Logo-TRENDSfer.jpeg" alt="TRENDSfer" class="logo-ticket">
+        </picture>
+        <div class="profile">
+            <h1>U</h1>
+        </div>
+    </header>
     <main>
         <section>
             <div class="Aceptar-Deuda">
-                <p>Le debes a Miguel, por una deuda de $350.00</p>
-                <img class="QR" src="/TRENDSfer/TRENDSfer/img/qr-code.png" alt="CoDi">
-                <img class="Logo-FondoBlanco" src="/TRENDSfer/TRENDSfer/img/Logo-ITRENDS-Blanco.png">
+                <h1>Aceptar deuda</h1>
+                <p data-deuda-descripcion>Cargando los datos de la deuda...</p>
+                <img class="QR" src="./img/qr-code.png" alt="Código QR de CoDi">
+                <img class="Logo-FondoBlanco" src="./img/Logo-ITRENDS-Blanco.png" alt="ITRENDS">
+                <button class="Aceptar" type="button" data-aceptar-deuda disabled>Cargando...</button>
             </div>
-            <button class="Aceptar" type="submit"><a href="./principal.html">Aceptar</a></button>
         </section>
     </main>
     <footer>
+        <img class="logo-footer" src="./img/svg_TRENDSfer.svg" alt="TRENDSfer">
         <div class="options active" id="ticket"><a href="./ticket.html">Ticket</a></div>
         <div class="options" id="deudas-deudores"><a href= "./principal.html">Deudas/Deudores</a></div>
         <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
         <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
+        <div class="avatar-photo"><h1>U</h1></div>
     </footer>
+    <script type="module" src="./aceptar-deuda.js"></script>
 </body>
 </html>
