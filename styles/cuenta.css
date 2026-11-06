@@ -167,8 +167,8 @@ footer {
   display: block;
   border-radius: 25px;
   width: 330px;
-  min-height: 550px;
-  height: auto;
+  /* min-height: 550px; */
+  height: calc(70dvh - 6rem);
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
@@ -176,6 +176,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  overflow: auto;
 }
 
 .AgregarTarjeta h1 {
@@ -260,14 +261,15 @@ input {
   display: block;
   border-radius: 25px;
   width: 330px;
-  height: 535px;
+  height: calc(70dvh - 7rem);
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
   font-family: "Space Grotesk";
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
+  overflow: auto;
 }
 
 .CompartirPerfil h1 {
@@ -323,6 +325,7 @@ input {
   width: 100px;
   margin-top: 30px;
   margin-left: 120px;
+  margin-bottom: 1rem;
 }
 
 .detalle {
