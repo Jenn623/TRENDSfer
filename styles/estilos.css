@@ -224,33 +224,20 @@ input {
     transform: translate(-50%, -50%);
   }
 
-  .foco::before,
   .foco::after {
     content: "";
     position: absolute;
     inset: 0;
+    background-image: url("../img/Foco-Encendido.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    transition: opacity 0.4s ease;
-  }
-
-  .foco::before {
-    background-image: url("../img/Foco-Apagado.png");
-    opacity: 1;
-  }
-
-  .foco::after {
-    background-image: url("../img/Foco-Encendido.png");
-    opacity: 0;
-  }
-
-  .foco:hover::before {
-    opacity: 0;
+    filter: grayscale(1);
+    transition: filter 0.4s ease;
   }
 
   .foco:hover::after {
-    opacity: 1;
+    filter: grayscale(0);
   }
 
   header {
@@ -316,7 +303,17 @@ input {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .foco {
+    top: calc(38rem - 3vw);
+  }
+}
+
 @media (min-width: 1024px) {
+  .foco {
+    top: 50%;
+  }
+
   body {
     /* min-height: 100vh; */
     height: 100%;
@@ -338,33 +335,20 @@ input {
     /* transform: translate(-50%, -50%); */
   /* } */ 
 
-  .foco::before,
   .foco::after {
     content: "";
     position: absolute;
     inset: 0;
+    background-image: url("../img/Foco-Encendido.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    transition: opacity 0.4s ease;
-  }
-
-  .foco::before {
-    background-image: url("../img/Foco-Apagado.png");
-    opacity: 1;
-  }
-
-  .foco::after {
-    background-image: url("../img/Foco-Encendido.png");
-    opacity: 0;
-  }
-
-  .foco:hover::before {
-    opacity: 0;
+    filter: grayscale(1);
+    transition: filter 0.4s ease;
   }
 
   .foco:hover::after {
-    opacity: 1;
+    filter: grayscale(0);
   }
 
   header {

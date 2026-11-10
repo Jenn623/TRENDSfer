@@ -1,7 +1,30 @@
 import { supabase } from './supabase.js';
 import { obtenerPerfilActual } from './auth-profile.js';
+import { crearUrlConInvitacion, obtenerInvitacionAmigo } from './invitacion-amigo.js';
 
 const formLogin = document.querySelector('.formIniciar-sesion');
+const idPerfilInvitador = obtenerInvitacionAmigo();
+const enlaceRegistro = document.querySelector('.link-crearCuenta a');
+
+if (enlaceRegistro && idPerfilInvitador) {
+    enlaceRegistro.href = crearUrlConInvitacion('./registro.html', idPerfilInvitador).href;
+}
+
+if (formLogin) {
+    supabase.auth.getSession().then(async ({ data, error }) => {
+        if (error) throw error;
+        if (!data.session) return;
+
+        const sesion = await obtenerPerfilActual();
+        if (!sesion) return;
+        window.location.replace(crearUrlConInvitacion(
+            './principal.html',
+            idPerfilInvitador
+        ).href);
+    }).catch((error) => {
+        console.error('No se pudo revisar la sesión activa:', error);
+    });
+}
 
 if (formLogin) {
     formLogin.addEventListener('submit', async (e) => {
@@ -36,7 +59,10 @@ if (formLogin) {
 
             localStorage.removeItem('usuarioSesion');
             alert('¡Bienvenido ' + (sesion.perfil.apodo || sesion.perfil.nombre) + '! Redirigiendo...');
-            window.location.href = 'principal.html'; 
+            window.location.href = crearUrlConInvitacion(
+                './principal.html',
+                idPerfilInvitador
+            ).href;
 
         } catch (error) {
             await supabase.auth.signOut();

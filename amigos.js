@@ -127,14 +127,14 @@ async function cargarAmigosYSolicitudes(idUsuarioActual) {
 			const idAmigo = relacion.id_solicitante === idUsuarioActual
 				? relacion.id_receptor : relacion.id_solicitante;
 			return {
-				id: relacion.id-amigo,
+				id: relacion['id-amigo'],
 				...(usuariosPorId.get(idAmigo) || { nombre: 'Usuario', busqueda: 'usuario' })
 			};
 		});
 	solicitudes = relaciones
 		.filter((relacion) => relacion.estado === 'pendiente' && relacion.id_receptor === idUsuarioActual)
 		.map((relacion) => ({
-			id: relacion.id-amigo,
+			id: relacion['id-amigo'],
 			...(usuariosPorId.get(relacion.id_solicitante) || { nombre: 'Usuario', busqueda: 'usuario' })
 		}));
 

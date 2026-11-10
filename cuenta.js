@@ -3,6 +3,7 @@ import { obtenerPerfilActual } from './auth-profile.js';
 import { cargarNotificaciones } from './notificaciones-data.js';
 import { iniciarEdicionPerfil } from './editar-perfil.js';
 import { iniciarCuentasCodi } from './cuentas-codi.js';
+import { iniciarCompartirPerfil } from './compartir-perfil.js';
 
 /* variables para manejar la presentacion de las cards */
 const desktop = window.matchMedia('(min-width: 1024px)');
@@ -34,7 +35,7 @@ async function cargarPerfil() {
 
         const canal = supabase
             .channel(`cuenta-notificaciones-${idUsuarioActual}`)
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'Tickets' }, () => {
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'Notificaciones' }, () => {
                 const contenedor = detalle.querySelector('[data-notificaciones]');
                 if (contenedor) {
                     cargarNotificaciones(contenedor, idUsuarioActual)
@@ -75,6 +76,9 @@ async function cargar(fila){
         }
         if (detalle.querySelector('.Form-AgregarTarjeta')) {
             iniciarCuentasCodi(detalle);
+        }
+        if (detalle.querySelector('.CompartirPerfil')) {
+            await iniciarCompartirPerfil(detalle);
         }
     }catch(error){
         console.error('No se pudo cargar el contenido de la cuenta:', error);

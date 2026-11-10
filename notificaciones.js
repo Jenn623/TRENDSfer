@@ -21,7 +21,7 @@ async function iniciarPagina() {
 		await cargarNotificaciones(contenedor, sesion.perfil.id_usuarios);
 		const canal = supabase
 			.channel(`notificaciones-${sesion.perfil.id_usuarios}`)
-			.on('postgres_changes', { event: '*', schema: 'public', table: 'Tickets' }, () => {
+			.on('postgres_changes', { event: '*', schema: 'public', table: 'Notificaciones' }, () => {
 				cargarNotificaciones(contenedor, sesion.perfil.id_usuarios)
 					.catch((error) => console.error('Error actualizando notificaciones:', error));
 			})

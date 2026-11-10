@@ -13,6 +13,18 @@ body {
   width: 100%;
 }
 
+.profile-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-link:focus-visible {
+  outline: 2px solid #d62828;
+  outline-offset: 3px;
+}
+
 header {
   height: 20%;
   width: 100%;

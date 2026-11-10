@@ -47,6 +47,18 @@ a:visited {
   color: #ffffff;
 }
 
+.profile-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-link:focus-visible {
+  outline: 2px solid #d62828;
+  outline-offset: 3px;
+}
+
 .Usuario {
   color: white;
   font-size: 3.5rem;
@@ -270,6 +282,11 @@ input {
   flex-direction: column;
   gap: 1rem;
   overflow: auto;
+  scrollbar-width: none;
+}
+
+.CompartirPerfil::-webkit-scrollbar {
+  display: none;
 }
 
 .CompartirPerfil h1 {
@@ -285,10 +302,13 @@ input {
 }
 
 .QR {
-  height: 225px;
-  width: 225px;
-  padding-top: 10px;
-  margin-left: 55px;
+  display: block;
+  width: min(225px, calc(100% - 4rem));
+  height: auto;
+  aspect-ratio: 1;
+  padding: 0;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .CopiarLink {
@@ -313,6 +333,40 @@ input {
   margin-left: 80px;
   border-radius: 13px;
   font-size: 1.8rem;
+}
+
+.Compartir[hidden],
+.perfil-share-options[hidden] {
+  display: none;
+}
+
+.perfil-share-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 175px;
+  margin: 1.2rem auto;
+}
+
+.perfil-share-options a {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 3.8rem;
+  padding: 0.6rem;
+  border-radius: 0.8rem;
+  background-color: white;
+  color: #111;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.perfil-share-options a:focus-visible {
+  outline: 2px solid #d62828;
+  outline-offset: 2px;
 }
 
 .logo,
@@ -358,14 +412,16 @@ input {
 .detalle .notificaciones-list {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .detalle .notificacion-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 8rem;
+  flex: 0 0 8rem;
   position: relative;
 }
 
@@ -390,7 +446,10 @@ input {
   font-size: 1.2rem;
   color: #6b6b6b;
   margin-left: 3rem;
-  margin-bottom: -2rem;
+}
+
+.detalle .notificaciones-list .divisor {
+  flex: 0 0 2px;
 }
 
 .detalle .notificacion-circle {
@@ -624,10 +683,13 @@ input {
 }
 
 .detalle .QR {
-  height: 225px;
-  width: 225px;
-  padding-top: 10px;
-  margin-left: 55px;
+  display: block;
+  width: min(225px, calc(100% - 4rem));
+  height: auto;
+  aspect-ratio: 1;
+  padding: 0;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .detalle .CopiarLink {
@@ -652,6 +714,10 @@ input {
   margin-left: 80px;
   border-radius: 13px;
   font-size: 1.8rem;
+}
+
+.detalle .perfil-share-options {
+  margin: 1.2rem auto;
 }
 
   footer {
@@ -824,6 +890,10 @@ input {
     height: 100%;
     min-height: 45rem;
     overflow: auto;
+  }
+
+  .detalle .card:has(.notificaciones-list) {
+    overflow: hidden;
   }
 
   .detalle .card:has(.registro){

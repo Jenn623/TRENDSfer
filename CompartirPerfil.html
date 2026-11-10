@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +15,23 @@
         <div class="btn-volver">
         <p><a href="./cuenta.html">< volver</a></p>
       </div>
-        <div class="profile">
-            <h1>L</h1>
-        </div>
-        <h1 class="Usuario">Lalo</h1>
+        <a class="profile profile-link" href="./cuenta.html" aria-label="Ir a Cuenta">
+            <h1 data-usuario-inicial>U</h1>
+        </a>
+        <h1 class="Usuario" data-usuario-nombre>Usuario</h1>
     </header>
     <main>
         <section class="card">
             <div class="CompartirPerfil">
                 <h1>Compartir Perfil</h1>
-                <img class="QR" src="./img/qr-code.png" alt="QR del Perfil">
-                <p>@Lalo</p>
-                <button class="CopiarLink" type="submit">Copiar Enlace</button>
-                <button class="Compartir" type="submit">Compartir</button>
+                <canvas class="QR" data-perfil-qr aria-label="Código QR de invitación" role="img"></canvas>
+                <p data-perfil-nombre>@Usuario</p>
+                <button class="CopiarLink" type="button">Copiar Enlace</button>
+                <button class="Compartir" type="button" data-perfil-compartir>Compartir</button>
+                <div class="perfil-share-options" data-perfil-share-options hidden>
+                    <a data-share-whatsapp target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a data-share-telegram target="_blank" rel="noopener noreferrer">Telegram</a>
+                </div>
                 
                 <img class="Logo-FondoBlanco" src="./img/Logo-ITRENDS-Blanco.png">
             </div>
@@ -40,5 +44,6 @@
         <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
         <div class="options active" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
     </footer>
+    <script type="module" src="./compartir-perfil.js"></script>
 </body>
 </html>

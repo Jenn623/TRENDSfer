@@ -50,8 +50,10 @@
 // }
 
 import { supabase } from './supabase.js';
+import { crearUrlConInvitacion, obtenerInvitacionAmigo } from './invitacion-amigo.js';
 
 const formRegistro = document.querySelector('.form-registro');
+const idPerfilInvitador = obtenerInvitacionAmigo();
 
 if (formRegistro) {
     formRegistro.addEventListener('submit', async (e) => {
@@ -75,12 +77,18 @@ if (formRegistro) {
             if (error) throw error;
 
             if (data.session) {
-                window.location.href = 'principal.html';
+                window.location.href = crearUrlConInvitacion(
+                    './principal.html',
+                    idPerfilInvitador
+                ).href;
                 return;
             }
 
             alert('Cuenta creada. Revisa tu correo para confirmar el registro.');
-            window.location.href = 'index.html';
+            window.location.href = crearUrlConInvitacion(
+                './index.html',
+                idPerfilInvitador
+            ).href;
 
         } catch (error) {
             console.error('Error durante el registro:', error.message);

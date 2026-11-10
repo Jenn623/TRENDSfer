@@ -16,9 +16,9 @@
         <source media="(min-width: 768px)" srcset="img/Logo-FondoGris.png">
         <img src="./img/Logo-TRENDSfer.jpeg" alt="TRENDSfer" class="logo">
     </picture>
-        <div class="profile">
+        <a class="profile profile-link" href="./cuenta.html" aria-label="Ir a Cuenta">
             <h1 data-usuario-inicial>U</h1>
-        </div>
+        </a>
     </header>
     <main>
         <section class="dashboard-layout">
@@ -70,15 +70,26 @@
             <img src="./img/Logo-ITRENDS.jpeg" alt="ITRENDS">
         </div>
     </main>
+    <dialog class="friend-invitation-dialog" data-amigo-invitacion aria-labelledby="amigo-invitacion-titulo">
+        <form method="dialog">
+            <h2 id="amigo-invitacion-titulo" data-amigo-invitacion-titulo>Invitación de amistad</h2>
+            <p data-amigo-invitacion-mensaje></p>
+            <div class="friend-invitation-actions">
+                <button type="button" data-amigo-invitacion-aceptar>Aceptar</button>
+                <button type="button" data-amigo-invitacion-rechazar>Rechazar</button>
+                <button type="button" data-amigo-invitacion-luego>Luego</button>
+            </div>
+        </form>
+    </dialog>
     <footer>
         <img class="logo-footer" src="./img/svg_TRENDSfer.svg" alt="TRENDSfer">
         <div class="options" id="ticket"><a href="./ticket.html">Ticket</a></div>
         <div class="options active" id="deudas-deudores"><a href= "./principal.html">Deudas/Deudores</a></div>
         <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
         <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
-        <div class="avatar-photo">
+        <a class="avatar-photo profile-link" href="./cuenta.html" aria-label="Ir a Cuenta">
             <h1 data-usuario-inicial>U</h1>
-        </div>
+        </a>
     </footer>
     <script type="module" src="principal.js"></script>
 </body>

@@ -42,6 +42,18 @@ body {
   color: #ffffff;
 }
 
+.profile-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-link:focus-visible {
+  outline: 2px solid #d62828;
+  outline-offset: 3px;
+}
+
 .logo {
   margin-top: 2rem;
 }
@@ -279,6 +291,54 @@ footer {
   border-radius: 13px;
 }
 
+.ticket-friend-picker {
+  position: relative;
+  width: 240px;
+}
+
+.Form-Ticket .ticket-friend-picker input[type="search"] {
+  width: 100%;
+}
+
+.ticket-friend-suggestions {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.3rem);
+  left: 0;
+  width: 100%;
+  max-height: 18rem;
+  overflow-y: auto;
+  border: 1px solid #888;
+  border-radius: 0.8rem;
+  background: #fff;
+  text-align: left;
+  box-shadow: 0 0.4rem 1rem rgb(0 0 0 / 18%);
+}
+
+.ticket-friend-option {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 0;
+  background: transparent;
+  color: #111;
+  text-align: left;
+  font: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.ticket-friend-option:hover,
+.ticket-friend-option:focus-visible {
+  background: #eee;
+}
+
+.ticket-friend-empty {
+  padding: 0.9rem 1.2rem;
+  color: #555;
+  font-size: 1.4rem;
+}
+
 .AgregarAmigo a {
   color: #d62828;
   text-decoration: none;
@@ -397,6 +457,71 @@ button {
   text-decoration: underline;
 }
 
+.friend-invitation-dialog {
+  width: min(38rem, calc(100% - 3rem));
+  margin: auto;
+  padding: 2.4rem;
+  border: 0;
+  border-radius: 1.8rem;
+  background: #d9d9d9;
+  color: #111;
+  font-family: "Space Grotesk";
+}
+
+.friend-invitation-dialog::backdrop {
+  background: rgb(0 0 0 / 70%);
+}
+
+.friend-invitation-dialog h2 {
+  font-size: 2.2rem;
+}
+
+.friend-invitation-dialog p {
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.friend-invitation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.friend-invitation-actions button {
+  padding: 0.8rem 1.4rem;
+  border: 0;
+  border-radius: 0.8rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.friend-invitation-actions [data-amigo-invitacion-aceptar] {
+  background: #d62828;
+  color: white;
+}
+
+.notifications-empty .notificacion-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.notifications-empty .notificacion-title h3 {
+  flex: 1;
+}
+
+.notifications-empty .notificacion-circle {
+  display: inline-block;
+  flex: 0 0 0.8rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.55rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: #d62828;
+}
+
 .QR {
   display: block;
   height: 22rem;
@@ -494,6 +619,20 @@ button {
   font-size: 2.2rem;
   text-decoration: none;
   color: black;
+}
+
+.dashboard-page .deuda-accion-fila {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dashboard-page .deuda-accion-fila:focus-visible {
+  outline: 2px solid #d62828;
+  outline-offset: 2px;
+}
+
+.dashboard-page .deuda-accion-etiqueta {
+  display: none;
 }
 
 .dashboard-side,
@@ -623,6 +762,28 @@ button {
   .Pagar {
     display: block;
     margin: 2rem auto 0;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda {
+    width: min(62rem, calc(100% - 4rem));
+    min-height: 0;
+    margin: 0 auto;
+    padding: 2.4rem 3rem;
+    gap: 1.4rem;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda h1 {
+    align-self: center;
+    text-align: center;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda p {
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  .aceptar-deuda-page .Aceptar {
+    margin: 0.4rem auto 0;
   }
 
   .Deuda-Pagar,
@@ -856,7 +1017,7 @@ button {
     font-size: 2.2rem;
   }
 
-  notifications-empty {
+  .notifications-empty {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -1194,6 +1355,10 @@ button {
     border-radius: 0.7rem;
     box-shadow: 0 0.2rem 0.3rem #0003;
     font-size: 1.1rem;
+  }
+
+  .ticket-page .ticket-friend-picker {
+    width: 100%;
   }
 
   .ticket-page .AgregarAmigo {
@@ -1606,9 +1771,157 @@ button {
 }
 
 @media (max-width: 767px) {
+  .dashboard-page .deuda-accion-fila {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.8rem;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+  }
+
+  .dashboard-page .deuda-accion-fila:active,
+  .dashboard-page .deuda-accion-fila:focus-visible {
+    background-color: #ffffff1a;
+  }
+
+  .dashboard-page .deuda-accion-fila .nombre {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .dashboard-page .deuda-accion-fila .monto {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .dashboard-page .deuda-accion-etiqueta {
+    display: inline;
+    flex: 0 0 auto;
+    color: #9b4d4d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .pagar-deuda-page .Pagar-Deuda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(34rem, 100%);
+    height: auto;
+    min-height: 0;
+    margin: 2rem auto;
+    padding: 2rem 2rem 2.4rem;
+  }
+
+  .pagar-deuda-page .Pagar-Deuda h1 {
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pagar-deuda-page .QR-PagarDeuda {
+    width: min(25rem, 100%);
+    height: auto;
+    aspect-ratio: 1;
+    margin: 2rem auto 1rem;
+    padding: 0;
+    object-fit: contain;
+  }
+
+  .pagar-deuda-page .Deuda-Pagar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .pagar-deuda-page .Concepto {
+    width: 100%;
+    margin: 0.8rem 0;
+    padding: 0 1rem;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .pagar-deuda-page .Pagar {
+    width: min(22rem, 100%);
+    margin: 1.5rem auto 0;
+  }
+
+  .pagar-deuda-page .Mensaje-Scanneo {
+    width: 100%;
+    margin: 0.8rem auto 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .aceptar-deuda-page main section {
+    align-items: center;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda {
+    width: 100%;
+    max-width: 42rem;
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 2.4rem 2rem;
+    gap: 1.6rem;
+    border: 1px solid #ffffff24;
+    border-radius: 2rem;
+    box-shadow: 0 1.2rem 3.2rem #0005;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda h1 {
+    align-self: center;
+    font-size: 2.6rem;
+    text-align: center;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda p {
+    padding: 0;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda [data-deuda-descripcion] {
+    font-size: 1.8rem;
+  }
+
+  .aceptar-deuda-page .Aceptar-Deuda [data-deuda-descripcion] strong {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 2.6rem;
+  }
+
+  .aceptar-deuda-page .aceptar-deuda-hint {
+    color: #555;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .aceptar-deuda-page .Aceptar {
+    width: 100%;
+    min-height: 5rem;
+    margin: 0.4rem auto 0;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+  }
+
+  .aceptar-deuda-page .Aceptar:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
   .dashboard-page .container {
     display: flex;
     flex-direction: column;
+    width: min(33rem, calc(100vw - 2.4rem));
     height: calc(90dvh - 12rem);
   }
 
@@ -1636,6 +1949,12 @@ button {
   .dashboard-page .resumen-deudores {
     flex: 0 0 calc(36dvh - 8rem);
     height: calc(36dvh - 8rem);
+  }
+
+  .dashboard-page .ticket-list-empty {
+    width: 100%;
+    padding: 0 1.2rem;
+    text-align: center;
   }
 
   .ticket-page {
@@ -1756,5 +2075,24 @@ button {
   .ticket-page .Form-Ticket button {
     margin-top: 0.5rem;
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 700px) {
+  .pagar-deuda-page .Pagar-Deuda {
+    padding: 1.6rem 2rem 1.8rem;
+  }
+
+  .pagar-deuda-page .QR-PagarDeuda {
+    width: min(20rem, 100%);
+    margin: 1.2rem auto 0.6rem;
+  }
+
+  .pagar-deuda-page .Pagar {
+    margin-top: 1rem;
+  }
+
+  .pagar-deuda-page .Mensaje-Scanneo {
+    margin-top: 0.5rem;
   }
 }

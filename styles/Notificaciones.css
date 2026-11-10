@@ -68,6 +68,18 @@ header{
     font-weight: bold;
 }
 
+.profile-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.profile-link:focus-visible {
+    outline: 2px solid #d62828;
+    outline-offset: 3px;
+}
+
 .avatar-name{
     margin-left: 2.8rem;
 }
@@ -133,6 +145,11 @@ header{
 .notificacion-link{
     color: inherit;
     text-decoration: none;
+}
+
+.notificacion-title .notificacion-link,
+.notificacion-title .notificacion-link:visited{
+    color: #111;
 }
 
 .notificacion-link:hover,

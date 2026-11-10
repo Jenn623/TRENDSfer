@@ -16,9 +16,9 @@
             <source media="(min-width: 768px)" srcset="img/Logo-FondoGris.svg">
             <img src="./img/Logo-TRENDSfer.jpeg" alt="TRENDSfer" class="logo-ticket">
         </picture>
-        <div class="profile">
+        <a class="profile profile-link" href="./cuenta.html" aria-label="Ir a Cuenta">
             <h1 data-usuario-inicial>U</h1>
-        </div>
+        </a>
     </header>
     <main>
         <section>
@@ -26,11 +26,21 @@
                 <h1>Crear Ticket</h1>
                 <form class="Form-Ticket">
                     <label for="buscador-deudores">Deudor</label>
-                    <select id="buscador-deudores" name="deudor" required>
-                        <option value="">Selecciona un usuario</option>
-                    </select>
+                    <div class="ticket-friend-picker">
+                        <input
+                            id="buscador-deudores"
+                            type="search"
+                            placeholder="Buscar entre tus amigos"
+                            autocomplete="off"
+                            aria-autocomplete="list"
+                            aria-controls="sugerencias-amigos"
+                            aria-expanded="false"
+                        >
+                        <input type="hidden" name="deudor">
+                        <div id="sugerencias-amigos" class="ticket-friend-suggestions" role="listbox" hidden></div>
+                    </div>
                     <div class="AgregarAmigo">
-                    <p>Los tickets se comparten con tus amigos registrados</p>
+                    <p>Los tickets solo se pueden compartir con amigos aceptados.</p>
                     </div>
 
                     <p>Monto</p>
@@ -50,9 +60,9 @@
         <div class="options" id="amigos"><a href="./amigos.html">Amigos</a></div>
         <div class="options" id="cuenta"><a href="./cuenta.html">Cuenta</a></div>
         <img class="logo-footer" src="./img/svg_TRENDSfer.svg" alt="TRENDSfer">
-        <div class="avatar-photo">
+        <a class="avatar-photo profile-link" href="./cuenta.html" aria-label="Ir a Cuenta">
             <h1 data-usuario-inicial>U</h1>
-        </div>
+        </a>
         <script type="module" src="ticket.js"></script>
     </footer>
 </body>
